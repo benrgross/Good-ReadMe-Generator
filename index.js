@@ -88,7 +88,12 @@ const questions = [
   {
     type: "list",
     message: "please pick a license",
-    choices: ["MIT", "Apache 2.0", "GNU GPL v3.0"],
+    choices: [
+      "MIT",
+      "Apache 2.0",
+      "Mozilla Public License 2.0",
+      "GNU GPL v3.0",
+    ],
     name: "license",
     default: "MIT",
   },
