@@ -89,13 +89,11 @@ const generateMarkDown = (userResponse) => {
 
   //--- Condition if email not provided. ---
 
-  if (userResponse.email !== " ")
+  if (userResponse.email !== "") {
     markDownTemp += `
 
-  email: ${userResponse.email}
-  
-  `;
-
+    email: ${userResponse.email} `;
+  }
   return markDownTemp;
 };
 module.exports = generateMarkDown;
