@@ -16,9 +16,13 @@ This application allows the user to download this repository from GitHub and run
 
 ## Installation
 
-To the install the application, the user must download the respository from GitHub, and in that file, install the inquier packgage using npm install inquirer in their terminal. Once the cooresponding node_modules are presents in the file, the user can type "node index.js" in their terminal, opened to that file. When node index is typed the apllication will run.
+To the install the application, the user must download the respository from GitHub, and in that file, install the inquier packgage using npm install inquirer in their terminal. Once the cooresponding node_modules are presents in the file, the user can type "node index.js" in their terminal, opened to that file. When node index is typed the application will run.
 
 ## Usage
+
+![alt-text](/assets/gif/Good-ReadMe.gif)
+
+This application is intended to generate a nicely formatted ReadMe for the user. The quality of this ReadMe is based on parameters provided by the Columbia School of Engineering Web Development Boot Camp, powered by Trilogy. This ReadMe is not intended to meet the standards of all intitutions and bussinesses. Use your discretion in maintaining of omitting any parts of this ReadMe file that is gennerated for the user.
 
 ## Contributors
 
