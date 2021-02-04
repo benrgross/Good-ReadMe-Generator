@@ -1,4 +1,5 @@
 const generateMarkDown = (userResponse) => {
+  // --- switch case for assigning license badge ---
   let badgeLink;
   switch (userResponse.license) {
     case "MIT":
@@ -22,8 +23,52 @@ const generateMarkDown = (userResponse) => {
         "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)";
   }
 
-  const markDownTemp = `${userResponse.username}
-  more text here \n  ${userResponse.repoName}\n ${userResponse.title}\n ${userResponse.description}\n ${userResponse.install}\n   ${userResponse.usage}\n ${badgeLink}`;
+  // --- add table of contents if the user inputs response ---
+  let tableOFContents = `## Table of Contents`;
+
+  if (userResponse.description !== "") {
+    tableOFContents += `*[Description][#description]`;
+  }
+  if (userResponse.installation !== "") {
+    tableOFContents += `*[Installation][#installation]`;
+  }
+  if (userResponse.usage !== "") {
+    tableOFContents += `*[Usage][#usage]`;
+  }
+  if (userResponse.contributors !== "") {
+    tableOFContents += `*[Contributors](#contributors)`;
+  }
+  if (userResponse.license !== "") {
+    tableOFContents += `*[Installation][#installation]`;
+  }
+
+  const markDownTemp =
+    // ---- Mark Down Rendering ----
+    `#${userResponse.title}
+
+  ${tableOFContents}
+
+  ##Description
+
+  ${userResponse.description}
+
+  ##Installation
+
+  ${userResponse.install}
+
+  ##Usage 
+
+  ${userResponse.usage}
+
+  ##License
+
+  ${badgeLink}
+
+  ##Questions 
+
+  Any questions can be directed at the info below 
+
+  git`;
 
   return markDownTemp;
 };

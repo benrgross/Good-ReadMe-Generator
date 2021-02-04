@@ -31,63 +31,51 @@ const questions = [
   // questions to user
   {
     type: "input",
-    message: "Enter your GitHub username.",
+    message: "Enter your GitHub username:",
     name: "username",
   },
 
   {
     type: "input",
-    message: "What is the name of your Github Repository?",
-    name: "repoName",
-    default: "Good-ReadMe-Generator",
+    message: "Please provide your email",
+    name: "email",
   },
 
   {
     type: "input",
     message: "Provide the project title",
     name: "title",
-    default: "Generate a Good README ",
   },
 
   {
     type: "input",
     message: "Provide a description",
     name: "description",
-    default:
-      " A Good ReadMe file is generated when input is provided from the prompts",
   },
-
   {
     type: "input",
     message: "What are the installation requirements?",
     name: "install",
-    default: "initialize npm --> install inquirer --> open node index.js",
   },
   {
     type: "input",
     message: "Describe the instructions for usage.",
     name: "usage",
-    default:
-      "Open file index in terminal --> run node index ---> answer the prompts --> generate your README.ms file  ",
   },
 
   {
     type: "input",
-    message:
-      "Enter the GitHub user names of any contributes (sepperate by comas)",
+    message: "Explain to the reader how hey can contribute to this application",
     name: "contributors",
-    default: " Ben Gross, Benjamin Wright and Micky Mouse",
   },
-
   {
     type: "input",
-    message: "Provide test instructions",
-    name: "test",
-    default: "Insert your test example here.",
+    message: "Provide testing instructions",
+    name: "tests",
   },
   {
     type: "list",
-    message: "please pick a license",
+    message: "Please pick a license (will apply MIT by default)",
     choices: [
       "MIT",
       "Apache 2.0",
