@@ -2,7 +2,7 @@
 
 const inquirer = require("inquirer");
 const fs = require("fs");
-const markdown = require("./markdown");
+const markdown = require("./assets/markdown");
 
 // ========= FUNCTIONS ===============
 // write userInfo Function
