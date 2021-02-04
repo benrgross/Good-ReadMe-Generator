@@ -1,21 +1,8 @@
+//--- Connect to methods and external functions ---
+
 const inquirer = require("inquirer");
 const fs = require("fs");
 const markdown = require("./markdown");
-
-// -------- connect to api file
-//--------- connect to markdown file
-
-// ----------------------- README.md is generated with the: ---------------
-//------ title of my project ---> input => title of ReadME
-//------------------------- and sections: --------------------------------
-//------- Description ----> input => text put in section
-//------- Table of Contents ---> click => taken to section
-//------- Installation ---> input instructions => text put in section
-//------- Usage  ---------> input => text put in section
-//------- License --------> Choice of lisence --> add badge
-//------- Contributing Guidelines  -------> input => put in section
-//------- Tests instructions ------> input => put in section
-//------- Questions ----> input: GitHub User Name and Email => put in section
 
 // ========= FUNCTIONS ===============
 // write userInfo Function
@@ -33,49 +20,54 @@ const questions = [
     type: "input",
     message: "Enter your GitHub username:",
     name: "username",
+    validate: function (answer) {
+      if (answer.length < 1) {
+        return console.log("You must include a GitHub username");
+      }
+      return true;
+    },
   },
-
   {
     type: "input",
-    message: "Please provide your email",
+    message: "Please provide your email:",
     name: "email",
   },
 
   {
     type: "input",
-    message: "Provide the project title",
+    message: "Provide the project title:",
     name: "title",
   },
 
   {
     type: "input",
-    message: "Provide a description",
+    message: "Provide a description of your project:",
     name: "description",
   },
   {
     type: "input",
-    message: "What are the installation requirements?",
+    message: "Detail the installation requirements:",
     name: "install",
   },
   {
     type: "input",
-    message: "Describe the instructions for usage.",
+    message: "Describe the instructions for usage:",
     name: "usage",
   },
-
   {
     type: "input",
-    message: "Explain to the reader how hey can contribute to this application",
+    message:
+      "Explain to the reader how hey can contribute to this application:",
     name: "contributors",
   },
   {
     type: "input",
-    message: "Provide testing instructions",
+    message: "Provide testing instructions:",
     name: "tests",
   },
   {
     type: "list",
-    message: "Please pick a license (will apply MIT by default)",
+    message: "Please pick a license (MIT applied by default)",
     choices: [
       "MIT",
       "Apache 2.0",
@@ -87,6 +79,8 @@ const questions = [
   },
 ];
 
+// --- Initiate inquirer prompt and response rendering ---
 inquirer.prompt(questions).then((response) => {
+  //--- Call writing to fs function ---
   writeUserInfo(response);
 });

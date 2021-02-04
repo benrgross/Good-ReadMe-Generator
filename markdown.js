@@ -27,48 +27,74 @@ const generateMarkDown = (userResponse) => {
   let tableOFContents = `## Table of Contents`;
 
   if (userResponse.description !== "") {
-    tableOFContents += `*[Description][#description]`;
-  }
-  if (userResponse.installation !== "") {
-    tableOFContents += `*[Installation][#installation]`;
-  }
-  if (userResponse.usage !== "") {
-    tableOFContents += `*[Usage][#usage]`;
-  }
-  if (userResponse.contributors !== "") {
-    tableOFContents += `*[Contributors](#contributors)`;
+    tableOFContents += `
+  * [Description](#description)`;
   }
   if (userResponse.license !== "") {
-    tableOFContents += `*[Installation][#installation]`;
+    tableOFContents += ` 
+  * [Installation](#installation)`;
+  }
+  if (userResponse.usage !== "") {
+    tableOFContents += ` 
+  * [Usage](#usage)`;
+  }
+  if (userResponse.tests !== "") {
+    tableOFContents += ` 
+  * [Tests](#tests)`;
+  }
+  if (userResponse.contributors !== "") {
+    tableOFContents += ` 
+  * [Contributors](#contributors)`;
+  }
+  if (userResponse.license !== "") {
+    tableOFContents += ` 
+  * [License](#license)`;
+  }
+  if (userResponse.username !== "") {
+    tableOFContents += ` 
+  * [Questions](#questions)`;
   }
 
-  const markDownTemp =
+  let markDownTemp =
     // ---- Mark Down Rendering ----
-    `#${userResponse.title}
+    `# ${userResponse.title}
 
   ${tableOFContents}
 
-  ##Description
+  ## Description
 
   ${userResponse.description}
 
-  ##Installation
+  ## Installation
 
   ${userResponse.install}
 
-  ##Usage 
+  ## Usage 
 
   ${userResponse.usage}
 
-  ##License
+  ## Contributors 
+
+  ${userResponse.contributors}
+
+  ## License
 
   ${badgeLink}
 
-  ##Questions 
+  ## Questions 
 
-  Any questions can be directed at the info below 
+  *Any questions can be directed at the info below:*
 
-  git`;
+  github: @${userResponse.username}`;
+
+  //--- Condition if email not provided. ---
+
+  if (userResponse.email !== " ")
+    markDownTemp += `
+
+  email: ${userResponse.email}
+  
+  `;
 
   return markDownTemp;
 };
