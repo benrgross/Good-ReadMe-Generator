@@ -1,5 +1,6 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
+const markdown = require("./markdown");
 
 // -------- connect to api file
 //--------- connect to markdown file
@@ -18,9 +19,8 @@ const fs = require("fs");
 
 // ========= FUNCTIONS ===============
 // write userInfo Function
-const writeUserInfo = (userResponse) => {
-  const text = `${userResponse.username}\n + ${userResponse.repoName}\n + ${userResponse.title}\n + ${userResponse.description}\n + ${userResponse.install}\n + ${userResponse.usage}\n + ${userResponse.license}`;
-  fs.writeFile("userREADME.MD", text, (err) =>
+const writeUserInfo = (response) => {
+  fs.writeFile("userREADME.MD", markdown(response), (err) =>
     err ? console.log(error) : console.log("success")
   );
 };
