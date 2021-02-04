@@ -8,7 +8,7 @@ const markdown = require("./assets/markdown");
 // write userInfo Function
 const writeUserInfo = (response) => {
   fs.writeFile("userREADME.MD", markdown(response), (err) =>
-    err ? console.log(error) : console.log("success")
+    err ? console.log(error) : console.log("Generating README.md")
   );
 };
 //========= USER INTERACTION =========
@@ -37,6 +37,7 @@ const questions = [
     type: "input",
     message: "Provide the project title:",
     name: "title",
+    default: "README",
   },
 
   {

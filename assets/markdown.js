@@ -57,42 +57,76 @@ const generateMarkDown = (userResponse) => {
 
   let markDownTemp =
     // ---- Mark Down Rendering ----
-    `# ${userResponse.title}
+    `
+  # ${userResponse.title}
 
-  ${tableOFContents}
+  `;
+  //add table of contents
+  markDownTemp += tableOFContents;
+
+  //add description
+  if (userResponse.description !== "") {
+    markDownTemp += `
 
   ## Description
 
-  ${userResponse.description}
+  ${userResponse.description}`;
+  }
+
+  //add installation
+  if (userResponse.install !== "") {
+    markDownTemp += `
 
   ## Installation
 
-  ${userResponse.install}
+  ${userResponse.install}`;
+  }
+  //add Usage
+  if (userResponse.usage !== "") {
+    markDownTemp += `
 
   ## Usage 
 
-  ${userResponse.usage}
+  ${userResponse.usage}`;
+  }
+  //add Tests
+  if (userResponse.tests !== "") {
+    markDownTemp += `
+
+  ## Tests 
+
+  ${userResponse.tests}`;
+  }
+  //add Contributors
+  if (userResponse.contributors !== "") {
+    markDownTemp += `
 
   ## Contributors 
 
-  ${userResponse.contributors}
+  ${userResponse.contributors}`;
+  }
+  //add License
+  markDownTemp += `
 
   ## License
 
-  ${badgeLink}
+  ${badgeLink}`;
+  //add Questions
+  if (userResponse.questions !== "") {
+    markDownTemp += `
 
   ## Questions 
 
   *Any questions can be directed at the info below:*
 
   github: @${userResponse.username}`;
+  }
 
-  //--- Condition if email not provided. ---
-
+  // add email
   if (userResponse.email !== "") {
     markDownTemp += `
 
-    email: ${userResponse.email} `;
+  email: ${userResponse.email}`;
   }
   return markDownTemp;
 };
