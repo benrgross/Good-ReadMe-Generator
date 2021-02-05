@@ -41,6 +41,6 @@ Contributors are welcome to fork this repository and submit a pull a request wit
 
 _Any questions can be directed at the info below:_
 
-github: @benrgross
+GitHub: @benrgross
 
 email: bengross@gmail.com
