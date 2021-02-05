@@ -6,8 +6,8 @@ const markdown = require("./assets/markdown");
 
 // write userInfo Function
 const writeUserInfo = (response) => {
-  fs.writeFile("exampleREADME.MD", markdown(response), (err) =>
-    err ? console.log(error) : console.log("Generating README.md")
+  fs.writeFile("yourREADME.md", markdown(response), (err) =>
+    err ? console.log(error) : console.log("Generating yourREADME.md")
   );
 };
 
