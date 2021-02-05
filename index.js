@@ -4,16 +4,14 @@ const inquirer = require("inquirer");
 const fs = require("fs");
 const markdown = require("./assets/markdown");
 
-// ========= FUNCTIONS ===============
 // write userInfo Function
 const writeUserInfo = (response) => {
   fs.writeFile("userREADME.MD", markdown(response), (err) =>
     err ? console.log(error) : console.log("Generating README.md")
   );
 };
-//========= USER INTERACTION =========
-//inquirer .prompt
 
+//--- Array of prompts ---
 const questions = [
   // questions to user
   {

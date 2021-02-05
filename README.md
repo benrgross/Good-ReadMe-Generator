@@ -5,28 +5,33 @@
 - [Description](#description)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Tests](#tests)
 - [Contributors](#contributors)
 - [License](#license)
 - [Questions](#questions)
 
 ## Description
 
-This application allows the user to download this repository from GitHub and run it on thier machine to generatea a ReadMe for thier desired project. After answering the promps in their node terminal, the answers are compiled and placed into a formatted .md file, using markdown syntax. Using Node.js with the inquirer package, the user is prompted to input thier, GitHub username. Using an authenticication function, the function will continue to prompt the user for thier GitHub user name until they input an answer. Once a GitHub user name is obtained, the user then prompted to proivide inputs for: Drescription, Instalation, Usage, Contributors, Lisence and Questions. If a user descides to leave an input black, the section will not appear in the table of contents. The Lisence questions, prompts the user with a list of which they are able to choose the desired lisence by scroling with the arrow keys. If a lisence is not chosen it will add an MIT lisence badge by default. When the user is finished answering the prompts, the ReadMe file is created and written, inserting thier inputs into the cooresponding section of the formatted readme page.
+This application allows the user to download this repository from GitHub and run it on their machine to generate a ReadMe for their desired project. After answering the prompts in their node terminal, the answers are compiled and placed into a formatted .md file using markdown syntax. Once a GitHub user name is obtained, the user is then prompted to provide inputs for: Description, Installation, Usage, Contributors, Licence and Questions. If a user deicides to leave an input blank, the section will not appear in the table of contents and the section will be omitted from the template. The Licence question, prompts the user with a list of which they are able to choose the desired licence by scrolling with the arrow keys. If a licence is not chosen it will add an MIT licence badge by default. When the user is finished answering the prompts, the ReadMe file is created and written, inserting their inputs into the corresponding section of the formatted readme page.
+
+This application utilizes Node.js and the inquirer package. These two application allow function to be deployed in the terminal. Using javaScript ES6, const, let, arrow function promises were utilized to carry out the functionality of this application. The application uses modularization by generating the markdown in separate module called markdown.js.
 
 ## Installation
 
-To the install the application, the user must download the respository from GitHub, and in that file, install the inquier packgage using npm install inquirer in their terminal. Once the cooresponding node_modules are presents in the file, the user can type "node index.js" in their terminal, opened to that file. When node index is typed the application will run.
+To the install the application, the user must download the repository from GitHub, and in that file, install the inquire package by typing "npm install inquirer" in their terminal.
 
 ## Usage
 
 ![alt-text](/assets/gif/Good-ReadMe.gif)
 
-This application is intended to generate a nicely formatted ReadMe for the user. The quality of this ReadMe is based on parameters provided by the Columbia School of Engineering Web Development Boot Camp, powered by Trilogy. This ReadMe is not intended to meet the standards of all intitutions and bussinesses. Use your discretion in maintaining of omitting any parts of this ReadMe file that is gennerated for the user.
+Once the corresponding node modules are present in the file, the user can type "node index" in their terminal. When node index is typed the application will run.
+
+When started the user is prompted for the their username. The user must type and input to continue with the prompts. From there follow the prompts and answer any that apply to your project. When a prompt is left blank, the corresponding section of the ReadMe will be omitted.
+
+This application is intended to generate a nicely formatted ReadMe for the user. The quality of this ReadMe is based on parameters provided by the Columbia School of Engineering Web Development Boot Camp, powered by Trilogy. This ReadMe is not intended to meet the standards of all institutions and businesses. Use your discretion in maintaining or omitting any parts of this ReadMe file that are generated for the user.
 
 ## Contributors
 
-Contributer are welcome to fork this reposository and submit a pull a request with any desired additions to applicatons. If accepted thier names and contact information (if provided) will be added to the list of contributers.
+Contributors are welcome to fork this repository and submit a pull a request with any desired additions to applicators. If accepted their names and contact information (if provided) will be added to the list of contributes.
 
 ## License
 

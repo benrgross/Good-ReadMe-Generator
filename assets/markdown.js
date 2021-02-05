@@ -119,7 +119,7 @@ const generateMarkDown = (userResponse) => {
 
   *Any questions can be directed at the info below:*
 
-  github: @${userResponse.username}`;
+  GitHub: @${userResponse.username}`;
   }
 
   // add email
